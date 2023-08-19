@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial OOP</title>
+  </head>
+  <body>
+    <h1>Factorial (OOP)</h1>
+    <form id="factorial-form">
+      <div>
+        <label for="input-factorial"><b>Input the n number</b></label>
+        <input
+          name="input"
+          type="number"
+          id="input-factorial"
+          min="0"
+          max="100"
+          step="1"
+          required
+        />
+      </div>
+      <div>
+        <label><b>Choose the method</b></label>
+        <input
+          type="radio"
+          id="method-doLoop"
+          name="method"
+          value="doLoop"
+          required
+        />
+        <label for="method-doLoop">Do Loop</label>
+        <input
+          type="radio"
+          id="method-forLoop"
+          name="method"
+          value="forLoop"
+          required
+        />
+        <label for="method-forLoop">For Loop</label>
+        <input
+          type="radio"
+          id="method-whileLoop"
+          name="method"
+          value="whileLoop"
+          required
+        />
+        <label for="method-whileLoop">While Loop</label>
+        <input
+          type="radio"
+          id="method-recursive"
+          name="method"
+          value="recursive"
+          required
+        />
+        <label for="method-recursive">Recursive</label>
+      </div>
+      <div>
+        <button type="submit">Count the Factorial</button>
+      </div>
+    </form>
+    <p><div>
+      <b>Result:<span id="result">-</span></b>
+    </div></p>
+    <p><a href="/index.html">Back Home</a></p>
+   <script type="module" src="/JS/oop/factorial.js"></script>
+  </body>
+</html>
