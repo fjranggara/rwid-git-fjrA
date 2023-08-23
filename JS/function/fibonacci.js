@@ -1,30 +1,35 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 function fiboRec(n) {
-  const v = checkInput(n);
-  if (v == 0) {
+  n = parseToNumber(n);
+
+  if (n == 0) {
     return 0;
-  } else if (v == 1) {
-    return 1;
-  } else {
-    return fiboRec(v - 1) + fiboRec(v - 2);
   }
+
+  if (n == 1) {
+    return 1;
+  }
+
+  return fiboRec(n - 1) + fiboRec(n - 2);
 }
+
 function fiboLoop(n) {
-  const v = checkInput(n);
-  let a = [];
-  let result;
-  for (let i = 0; i <= v; i++) {
-    if (i == 0) {
-      a[i] = 0;
-    } else if (i == 1) {
-      a[i] = 1;
+  n = parseToNumber(n);
+
+  let array = [];
+
+  for (let index = 0; index <= v; index++) {
+    if (index == 0) {
+      array[index] = 0;
+    } else if (index == 1) {
+      array[index] = 1;
     } else {
-      a[i] = a[i - 1] + a[i - 2];
+      array[index] = array[index - 1] + array[index - 2];
     }
   }
-  result = a[v];
-  return result;
+
+  return a[v];
 }
 
 document

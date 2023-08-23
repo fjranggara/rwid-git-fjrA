@@ -5,42 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fibonacci-function</title>
   </head>
+
   <body>
     <h1>Fibonacci function</h1>
+
+    <form id="fibonacci-form">
+      <div>
+        <label for="input-fibonacci">Input the n number:</label>
+        <input type="number" name="input" id="input-fibonacci" required />
+      </div>
+
+      <div>
+        <label>Method:</label>
+
+        <input
+          type="radio"
+          id="method-loop"
+          required
+          name="method"
+          value="loop"
+        />
+        <label for="method-loop">Loop</label>
+
+        <input
+          type="radio"
+          id="method-recursive"
+          required
+          name="method"
+          value="recursive"
+        />
+        <label for="method-recursive">Recursive</label>
+      </div>
+
+      <div><button type="submit">Fibonacci</button></div>
+    </form>
+
     <div>
-      <form id="fibonacci-form">
-        <div>
-          <label for="input-fibonacci">Input the n number:</label>
-          <input type="number" name="input" id="input-fibonacci" required />
-        </div>
-        <div>
-          <label>Method:</label>
-          <input
-            type="radio"
-            id="method-loop"
-            required
-            name="method"
-            value="loop"
-          />
-          <label for="method-loop">Loop</label>
-          <input
-            type="radio"
-            id="method-recursive"
-            required
-            name="method"
-            value="recursive"
-          />
-          <label for="method-recursive">Recursive</label>
-        </div>
-        <div>
-          <strong>Result :<span id="result">-</span></strong>
-        </div>
-        <p>
-            <div><button type="submit">Fibonacci</button></div>
-        </p>
-      </form>
+      <strong>Result :<span id="result">-</span></strong>
     </div>
-    <div><a href="/index.html">Back Home</a></div>
+
+    <p><a href="/index.html">Back Home</a></p>
+
     <script type="module" src="/JS/function/fibonacci.js"></script>
   </body>
 </html>

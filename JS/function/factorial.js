@@ -1,75 +1,84 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
-function factRec(b) {
-  b = checkInput(b);
-  let i;
-  if (b > 0) {
-    return b * factRec(b - 1); //return juga bisa menyimpan data
-  }
-  if (b == 0) {
-    return 1;
-  }
-}
+function factRec(value) {
+  value = parseToNumber(value);
 
-function factFor(b) {
-  b = checkInput(b);
-  if (b == 0) {
+  if (value <= 0) {
     return 1;
   }
 
-  for (let i = b - 1; i > 1; i--) {
-    b *= i;
-  }
-  return b;
+  return value * factRec(value - 1);
 }
 
-function factWhile(b) {
-  b = checkInput(b);
-  if (b == 0) {
+function factFor(value) {
+  value = parseToNumber(value);
+
+  if (value <= 0) {
     return 1;
   }
-  if (b > 0) {
-    let i = b - 1;
-    while (i > 0) {
-      b *= i;
-      i--;
-    }
+
+  for (let iteration = value - 1; iteration > 1; iteration--) {
+    value *= iteration;
   }
-  return b;
+
+  return value;
 }
 
-function factDo(b) {
-  b = checkInput(b);
-  if (b == 0 || b == 1) {
+function factWhile(value) {
+  value = parseToNumber(value);
+
+  if (value <= 0) {
     return 1;
   }
-  if (b > 0) {
-    let i = b - 1;
-    do {
-      b *= i;
-      i--;
-    } while (i > 0);
+
+  let iteration = value - 1;
+
+  while (iteration > 1) {
+    value *= iteration;
+    iteration--;
   }
-  return b;
+
+  return value;
 }
+
+function factDo(value) {
+  value = parseToNumber(value);
+
+  if (value <= 0) {
+    return 1;
+  }
+
+  let iteration = value - 1;
+
+  do {
+    value *= iteration;
+    iteration--;
+  } while (iteration > 0);
+
+  return value;
+}
+
 document
   .getElementById("factorial-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+
     try {
       const number = event.target["input"].value;
       const method = event.target["method"].value;
 
       let result;
+
       if (method === "doLoop") {
         result = factDo(number);
       } else if (method === "forLoop") {
         result = factFor(number);
       } else if (method === "whileLoop") {
         result = factWhile(number);
-      } else {
+      } else if (method === "recursive") {
         result = factRec(number);
       }
+
       document.getElementById("result").textContent = result;
     } catch (error) {
       alert(error.message);
