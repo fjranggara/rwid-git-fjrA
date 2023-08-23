@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factorial function</title>
   </head>
+
   <body>
     <h1>Factorial (functional)</h1>
+
     <form id="factorial-form">
       <div>
         <label for="input-factorial"><b>Input the n number</b></label>
@@ -20,8 +22,10 @@
           required
         />
       </div>
+
       <div>
         <label><b>Choose the method</b></label>
+
         <input
           type="radio"
           id="method-doLoop"
@@ -30,6 +34,7 @@
           required
         />
         <label for="method-doLoop">Do Loop</label>
+
         <input
           type="radio"
           id="method-forLoop"
@@ -38,6 +43,7 @@
           required
         />
         <label for="method-forLoop">For Loop</label>
+
         <input
           type="radio"
           id="method-whileLoop"
@@ -46,6 +52,7 @@
           required
         />
         <label for="method-whileLoop">While Loop</label>
+
         <input
           type="radio"
           id="method-recursive"
@@ -53,16 +60,20 @@
           value="recursive"
           required
         />
-        <label for="method-recursive">recursive</label>
+        <label for="method-recursive">Recursive</label>
       </div>
+
       <div>
         <button type="submit">Count the Factorial</button>
       </div>
     </form>
-    <p><div>
+
+    <div>
       <b>Result:<span id="result">-</span></b>
-    </div></p>
+    </div>
+
     <p><a href="/index.html">Back Home</a></p>
-   <script type="module" src="/JS/function/factorial.js"></script>
+
+    <script type="module" src="/JS/function/factorial.js"></script>
   </body>
 </html>
