@@ -1,7 +1,7 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 function fizz_buzz(number) {
-  const n = checkInput(number);
+  const n = parseToNumber(number);
   let array = [];
   for (let i = 1; i <= n; i++) {
     if (i % 4 == 0 || i % 7 == 0) {

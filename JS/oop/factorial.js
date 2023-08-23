@@ -1,9 +1,9 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 class Factorial {
   n;
   factRec(input) {
-    this.n = checkInput(input);
+    this.n = parseToNumber(input);
     if (this.n > 0) {
       return this.n * this.factRec(this.n - 1);
     }
@@ -12,7 +12,7 @@ class Factorial {
     }
   }
   factFor(input) {
-    this.n = checkInput(input);
+    this.n = parseToNumber(input);
     let result = this.n;
     if (result == 0) {
       return 1;
@@ -25,7 +25,7 @@ class Factorial {
     return result;
   }
   factWhile(input) {
-    this.n = checkInput(input);
+    this.n = parseToNumber(input);
     if (this.n == 0) {
       return 1;
     }
@@ -39,7 +39,7 @@ class Factorial {
     return this.n;
   }
   factDo(input) {
-    this.n = checkInput(input);
+    this.n = parseToNumber(input);
     if (this.n == 0 || this.n == 1) {
       return 1;
     }

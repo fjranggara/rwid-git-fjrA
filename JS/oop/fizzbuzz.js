@@ -1,9 +1,9 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 class Fizzbuzz {
   n;
   fizz_buzz(value) {
-    this.n = checkInput(value);
+    this.n = parseToNumber(value);
     let array = [];
     for (let i = 1; i <= this.n; i++) {
       if (i % 4 == 0 || i % 7 == 0) {

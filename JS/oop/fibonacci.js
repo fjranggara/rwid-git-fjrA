@@ -1,4 +1,4 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 class Fibonacci {
   n;
@@ -13,7 +13,7 @@ class Fibonacci {
     }
   }
   fiboLoop(value) {
-    this.n = checkInput(value);
+    this.n = parseToNumber(value);
     let a = [];
     let result;
     for (let i = 0; i <= this.n; i++) {

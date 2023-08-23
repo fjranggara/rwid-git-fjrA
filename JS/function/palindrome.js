@@ -1,8 +1,8 @@
-import { text } from "../../trueInput.js";
+import { parseToString } from "../helpers.js";
 
 function isPalindromeRec(n) {
   return new Promise(function (resolve) {
-    const word = text(n);
+    const word = parseToString(n);
 
     let i = word.length;
     let j = 0;
@@ -23,7 +23,7 @@ function isPalindromeRec(n) {
 }
 
 function isPalindromeLoop(n) {
-  const word = text(n);
+  const word = parseToString(n);
 
   for (let i in word) {
     let c = word.length;
@@ -37,7 +37,7 @@ function isPalindromeLoop(n) {
 }
 
 function isPalindromeReverse(n) {
-  const word = text(n);
+  const word = parseToString(n);
 
   const arWord = Array.from(word);
   const newWorld = arWord.reduceRight(

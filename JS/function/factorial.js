@@ -1,7 +1,7 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 function factRec(b) {
-  b = checkInput(b);
+  b = parseToNumber(b);
   let i;
   if (b > 0) {
     return b * factRec(b - 1); //return juga bisa menyimpan data
@@ -12,7 +12,7 @@ function factRec(b) {
 }
 
 function factFor(b) {
-  b = checkInput(b);
+  b = parseToNumber(b);
   if (b == 0) {
     return 1;
   }
@@ -24,7 +24,7 @@ function factFor(b) {
 }
 
 function factWhile(b) {
-  b = checkInput(b);
+  b = parseToNumber(b);
   if (b == 0) {
     return 1;
   }
@@ -39,7 +39,7 @@ function factWhile(b) {
 }
 
 function factDo(b) {
-  b = checkInput(b);
+  b = parseToNumber(b);
   if (b == 0 || b == 1) {
     return 1;
   }

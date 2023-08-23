@@ -1,11 +1,11 @@
-import { text } from "../../trueInput.js";
+import { parseToString } from "../helpers.js";
 
 class Palindrome {
   word;
   length;
 
   isPalindromeRec(input) {
-    this.word = text(input);
+    this.word = parseToString(input);
     this.length = this.word.length;
     const isPalindrome = this.recursive(this.length);
     return isPalindrome;
@@ -21,7 +21,7 @@ class Palindrome {
     return this.recursive(i);
   }
   isPalindromeLoop(input) {
-    this.word = text(input);
+    this.word = parseToString(input);
     this.length = this.word.length;
 
     for (let i = 0; i < this.length; i++) {
@@ -34,7 +34,7 @@ class Palindrome {
     return true;
   }
   isPalindromeReverse(input) {
-    this.word = text(input);
+    this.word = parseToString(input);
     this.length = this.word.length;
 
     const arWord = Array.from(this.word);

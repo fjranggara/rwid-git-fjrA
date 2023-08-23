@@ -1,7 +1,7 @@
-import { checkInput } from "../../trueInput.js";
+import { parseToNumber } from "../helpers.js";
 
 function fiboRec(n) {
-  const v = checkInput(n);
+  const v = parseToNumber(n);
   if (v == 0) {
     return 0;
   } else if (v == 1) {
@@ -11,7 +11,7 @@ function fiboRec(n) {
   }
 }
 function fiboLoop(n) {
-  const v = checkInput(n);
+  const v = parseToNumber(n);
   let a = [];
   let result;
   for (let i = 0; i <= v; i++) {
